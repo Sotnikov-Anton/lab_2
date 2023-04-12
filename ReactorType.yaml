@@ -1,0 +1,121 @@
+!!java.util.ArrayList
+    - type: "MKER"
+      burnup: 30
+      kpd: 0.352
+      enrichment: 0.024
+      thermal_capacity: 4250
+      electrical_capacity: 1500
+      life_time: 50
+      first_load: 192
+    - type: "RBMK"
+      burnup: 25
+      kpd: 0.3125
+      enrichment: 0.027
+      thermal_capacity: 3200
+      electrical_capacity: 1000
+      life_time: 40
+      first_load: 192
+    - type: "VVER-1200"
+      burnup: 40
+      kpd: 0.33
+      enrichment: 0.0385
+      thermal_capacity: 3200
+      electrical_capacity: 1056
+      life_time: 60
+      first_load: 79.84
+    - type: "AP1000"
+      burnup: 43.2
+      kpd: 0.339
+      enrichment: 0.048
+      thermal_capacity: 3415
+      electrical_capacity: 1158
+      life_time: 60
+      first_load: 93.65
+    - type: "BWR"
+      burnup: 45
+      kpd: 0.343
+      enrichment: 0.041
+      thermal_capacity: 3572
+      electrical_capacity: 1252
+      life_time: 60
+      first_load: 128
+    - type: "ABWR"
+      burnup: 46.4
+      kpd: 0.3655
+      enrichment: 0.036
+      thermal_capacity: 4500
+      electrical_capacity: 1645
+      life_time: 60
+      first_load: 128
+    - type: "EPR"
+      burnup: 36.1
+      kpd: 0.3515
+      enrichment: 0.032
+      thermal_capacity: 3992
+      electrical_capacity: 1404.5
+      life_time: 60
+      first_load: 140.66
+    - type: "MAGNOX"
+      burnup: 4.5
+      kpd: 0.23
+      enrichment: 0.01
+      thermal_capacity: 728
+      electrical_capacity: 184
+      life_time: 60
+      first_load: 120
+    - type: "BN"
+      burnup: 140
+      kpd: 42.05
+      enrichment: 0.21
+      thermal_capacity: 2800
+      electrical_capacity: 1220
+      life_time: 60
+      first_load: 50.4
+    - type: "PWR"
+      burnup: 42
+      kpd: 34
+      enrichment: 0.045
+      thermal_capacity: 3411
+      electrical_capacity: 1150
+      life_time: 50
+      first_load: 74
+    - type: "CPR-1000"
+      burnup: 52
+      kpd: 35.1
+      enrichment: 0.045
+      thermal_capacity: 2900
+      electrical_capacity: 1021
+      life_time: 40
+      first_load: 77
+    - type: "CANDU"
+      burnup: 8
+      kpd: 0.3
+      enrichment: 0.0071
+      thermal_capacity: 2343
+      electrical_capacity: 742
+      life_time: 60
+      first_load: 38.9
+    - type: "PHWR"
+      burnup: 8
+      kpd: 0.3
+      enrichment: 0.0071
+      thermal_capacity: 2343
+      electrical_capacity: 742
+      life_time: 60
+      first_load: 38.9
+    - type: "KLT-40"
+      burnup: 42
+      kpd: 0.3
+      enrichment: 0.16
+      thermal_capacity: 150
+      electrical_capacity: 32
+      life_time: 36
+      first_load: 0.007
+    - type: "PWR_TEST"
+      burnup: 40
+      kpd: 0.33
+      enrichment: 0.044
+      thermal_capacity: 3200
+      electrical_capacity: 1056
+      life_time: 60
+      first_load: 79.84
