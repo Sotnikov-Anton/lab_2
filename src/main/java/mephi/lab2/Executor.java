@@ -92,7 +92,7 @@ public class Executor {
         HashMap<String, Double> entities = ArrayListToHashMap(reactors.get(column_name));
         for (int i = 0; i < reactors.get("class").size(); i++) {
             double val = (Double) reactors.get("burnup").get(i);
-            entities.put((String) reactors.get(column_name).get(i), entities.get((String)reactors.get(column_name).get(i)) + val);
+            entities.put((String) reactors.get(column_name).get(i), (Double)((Integer)reactors.get("thermal_capacity").get(i) / val));
         }
         return entities;
     }
