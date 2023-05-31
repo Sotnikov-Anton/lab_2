@@ -2,6 +2,7 @@ package mephi.lab2;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -13,15 +14,27 @@ import javax.xml.stream.events.XMLEvent;
 public class XMLReader implements FileReader{
     private DataStorage ds;
     private Reactor reactor;
+    private FileReader neighbour;
     
     public XMLReader() {
         this.ds = new DataStorage();
     }
+
+    public XMLReader(String filename){
+        this.ds = new DataStorage();
+        readFile(filename);
+    }
     public DataStorage getDs() {
         return ds;
     }
+    public FileReader getNeighbour() {
+        return neighbour;
+    }
+    public void setNeighbour(FileReader neighbour) {
+        this.neighbour = neighbour;
+    }
     @Override
-    public void readFile(String path) {
+    public ArrayList<Reactor> readFile(String path) {
         ds.setSource("xml");
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         try {
@@ -66,9 +79,14 @@ public class XMLReader implements FileReader{
                     }
                 }
             }
-        } catch (FileNotFoundException | XMLStreamException e) {
+            
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (XMLStreamException xe) {
+            //System.out.println("Error!");
+            return neighbour.readFile(path);
         }
+        return ds.getReactors();
     }
 
     @Override

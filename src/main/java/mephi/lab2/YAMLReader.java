@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
 import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.error.YAMLException;
 
 public class YAMLReader implements FileReader{
     private DataStorage ds;
     private Reactor reactor;
+    private FileReader neighbour;
     
     public YAMLReader() {
         this.ds = new DataStorage();
@@ -17,9 +19,15 @@ public class YAMLReader implements FileReader{
     public DataStorage getDs() {
         return ds;
     }
+    public FileReader getNeighbour() {
+        return neighbour;
+    }
+    public void setNeighbour(FileReader neighbour) {
+        this.neighbour = neighbour;
+    }
 
     @Override
-    public void readFile(String path) {
+    public ArrayList<Reactor> readFile(String path) {
         ds.setSource("yaml");
         Yaml yaml = new Yaml(new ListConstructor<>(Reactor.class));
         try {
@@ -27,7 +35,10 @@ public class YAMLReader implements FileReader{
             ds.setReactors(reactors);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (YAMLException ye) {
+            return neighbour.readFile(path);
         }
+        return ds.getReactors();
     }
     
     @Override

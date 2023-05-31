@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class DataStorage {
     private String source;
-    private ArrayList<Reactor> reactors = new ArrayList<Reactor>();
+    private ArrayList<Reactor> reactors = new ArrayList<>();
 
     public String getSource() {
         return source;
